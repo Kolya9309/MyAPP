@@ -1,7 +1,9 @@
 from fastapi import FastAPI
-import models, database
+
+import models
+import database
 from auth import routes as auth_routes
-from meals import routes as meal_routes
+from meals import models as meal_models, routes as meal_routes
 
 models.Base.metadata.create_all(bind=database.engine)
 meal_models.Base.metadata.create_all(bind=database.engine)
