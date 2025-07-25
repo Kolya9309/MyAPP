@@ -1,8 +1,10 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Float, Date
 from database import Base
 
-class User(Base):
-    __tablename__ = "users"
+class Meal(Base):
+    __tablename__ = "meals"
+
     id = Column(Integer, primary_key=True, index=True)
-    username = Column(String, unique=True, index=True)
-    password = Column(String)
+    name = Column(String, index=True)
+    calories = Column(Float)
+    date = Column(Date)
